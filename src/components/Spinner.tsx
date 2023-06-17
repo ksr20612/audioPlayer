@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import React, { ReactElement, useState, useEffect, CSSProperties } from "react";
 import { ReactComponent as LoadingSvg } from "assets/svgs/loading.svg";
 import { Size } from "types/Size";
@@ -11,15 +11,17 @@ interface SpinnerProps {
 }
 const Spinner = ({ 
     size = "50px", 
-    color = "#f0f0f0", 
+    color, 
     strokeWidth = 10,
 }: SpinnerProps): ReactElement => {
     
+    const theme = useTheme();
+
     return (
         <SpinnerWrapper
             width={size}
             height={size}
-            stroke={color}
+            stroke={color || theme?.color.color_400}
             strokeWidth={strokeWidth}
         />
     )
