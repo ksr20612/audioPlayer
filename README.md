@@ -50,6 +50,8 @@
     - useCreateAudio 훅 내부에서 redux에 저장할 전역 상태들을 이용하고 dispatch 호출하는 것은 의존성을 높인다고 판단하였습니다.
 - useFetchAudio 훅을 제작하여 오디오 url을 가져오는 로직을 분리해두었습니다.
 - 오디오의 재생바(Slider.tsx)는 html input[type='range'] 엘리먼트를 사용하여 커스텀하였습니다.
+    - 처음에는 background(linear-gradient)를 이용하여 진행된 영역을 색칠하도록 구성하였는데, 영역의 길이를 매번 계산하여 props로 전달하는 것이 렌더링을 발생시켜, box-shadow를 이용하는 것으로 재구성하였습니다.
+- 크롬과 파이어폭스에서 모두 동작합니다.
 
 # 4. 개선 및 추가 개발이 필요한 부분
 
