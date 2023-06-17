@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef, useCallback, useMemo, ReactElement, CSSProperties } from 'react';
 import styled, { css } from 'styled-components';
 import { EventFunc } from 'types/Event';
-import { PropsWithChildren } from 'types/PropsWithChildren';
 import playButtonImage from 'assets/images/ic-small-fill-play-gray.png';
 import stopButtonImage from 'assets/images/ic-small-line-stop-gray.png';
 import React from 'react';

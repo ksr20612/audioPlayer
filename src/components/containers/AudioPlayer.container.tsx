@@ -4,8 +4,6 @@ import useCreateAudio from 'hooks/useCreateAudio';
 import { useState, useEffect, useRef, useCallback, useMemo, ReactElement } from 'react';
 import { useAppDispatch, useAppSelector } from 'stores/Store';
 import { setAudioControls, setAudioUrlSelected } from 'stores/slices/audio.slice';
-import { AudioControls } from 'types/AudioControls';
-import { EventObject } from 'types/Event';
 
 interface AudioPlayerContainerProps {
 

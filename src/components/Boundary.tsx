@@ -1,10 +1,9 @@
 import React, { ReactElement, useState, useEffect, useCallback, useRef, ReactNode, Suspense } from 'react';
 import { PropsWithChildren } from 'types/PropsWithChildren';
-import { ErrorBoundary } from 'react-error-boundary';
+import { ErrorBoundary, FallbackProps, useErrorBoundary } from 'react-error-boundary';
 import Spinner from './Spinner';
 import styled from 'styled-components';
-import { toast } from 'react-toastify';
-import { useQueryErrorResetBoundary } from '@tanstack/react-query';
+import Button from './atoms/Button';
 
 interface BoundaryProps {
     fallback?: ReactNode;
@@ -19,12 +18,12 @@ const Boundary = ({
     )
 }: PropsWithChildren<BoundaryProps>): ReactElement => {
 
-    const errorFallback = useCallback(({ error }: { error: Error }) => {
+    const errorFallback = useCallback(({ error, resetErrorBoundary }: FallbackProps) => {
         return (
             <Wrapper>
                 <strong>Sorry, something went wrong!</strong>
-                <br/>
                 please try again.
+                <Button styles={{ marginTop: "5px" }} handleClick={resetErrorBoundary}>Retry</Button>
             </Wrapper>
         )
     }, []);
@@ -40,7 +39,9 @@ const Boundary = ({
     );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.div.attrs({
+    role: "alert",
+})`
     width: 100%;
     height: 100%;
     display: flex;

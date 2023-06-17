@@ -4,11 +4,8 @@ import Title from 'components/atoms/Title';
 import Date from 'components/atoms/Date';
 import { useState, useEffect, useRef, useCallback, useMemo, ReactElement, ReactNode, CSSProperties } from 'react';
 import styled, { css } from 'styled-components';
-import { EventFunc, EventObject } from 'types/Event';
+import { EventFunc } from 'types/Event';
 import PlayButton from 'components/atoms/PlayButton';
-import { useAppDispatch, useAppSelector } from 'stores/Store';
-import { Music as MusicType } from 'api/musics';
-import { setAudioIdSelected, setAudioTitleSelected } from 'stores/slices/audio.slice';
 import { formatDate } from 'utils/formatDate';
 
 interface MusicProps {

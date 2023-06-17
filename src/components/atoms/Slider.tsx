@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef, useCallback, useMemo, ReactElement } from 'react';
 import styled, { css } from 'styled-components';
-import { Size } from 'types/Size';
-import { AudioControls } from 'types/AudioControls';
 import React from 'react';
 
 interface SliderProps {

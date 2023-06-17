@@ -4,7 +4,6 @@ import SliderWithClock from 'components/molecules/SliderWithClock';
 import { useState, useEffect, useRef, useCallback, useMemo, ReactElement, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import { AudioControls } from 'types/AudioControls';
-import { EventFunc, EventObject } from 'types/Event';
 
 interface AudioPlayerProps {
     audioTitle: ReactNode;
@@ -18,11 +17,15 @@ const AudioPlayer = ({
     controls,
 }: AudioPlayerProps): ReactElement => {
 
+    const play = useCallback(() => {
+        controls.play(audioId);
+    }, []);
+
     return (
         <Wrapper>
             <PlayButton 
                 isPlaying={controls.isPlaying} 
-                handleClick={controls.isPlaying? controls.pause : ()=>controls.play(audioId)}
+                handleClick={controls.isPlaying? controls.pause : play}
             />
             <Title styles={{ 
                 minWidth: "20%",

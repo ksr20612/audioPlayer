@@ -1,11 +1,10 @@
 import { Music as MusicType } from 'api/musics';
-import { useMusicsByMusicIdQuery, useMusicsQuery } from 'api/musics/queries';
+import { useMusicsByMusicIdQuery } from 'api/musics/queries';
 import Music from 'components/molecules/Music';
 import { useState, useEffect, useRef, useCallback, useMemo, ReactElement, CSSProperties } from 'react';
 import styled, { css } from 'styled-components';
 import { FixedSizeList } from 'react-window';
 import useGetElementSize from 'hooks/useGetElementSize';
-import { useAppSelector } from 'stores/Store';
 import React from 'react';
 import useGetWindowSize from 'hooks/useGetWindowSize';
 

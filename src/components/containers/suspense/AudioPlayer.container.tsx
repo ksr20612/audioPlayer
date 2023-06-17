@@ -2,7 +2,6 @@ import Boundary from 'components/Boundary';
 import { useState, useEffect, useRef, useCallback, useMemo, ReactElement, Suspense } from 'react';
 import styled, { css } from 'styled-components';
 import AudioPlayerContainer from '../AudioPlayer.container';
-import { AudioControls } from 'types/AudioControls';
 
 interface AudioPlayerSuspenseContainerProps {
 
