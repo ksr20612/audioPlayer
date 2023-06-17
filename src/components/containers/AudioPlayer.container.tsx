@@ -14,8 +14,6 @@ const AudioPlayerContainer = ({
 }: AudioPlayerContainerProps): ReactElement => {
 
     const dispatch = useAppDispatch();
-
-    /* TODO: url fetch, useAudio.url eliminate */
     const audioIdSelected = useAppSelector(state => state.audio.audioIdSelected);
     const audioTitleSelected = useAppSelector(state => state.audio.audioTitleSelected);
     const { data: musicData } = useMusicsByMusicIdQuery({ musicId: audioIdSelected }, {
@@ -25,7 +23,7 @@ const AudioPlayerContainer = ({
         dispatch(setAudioUrlSelected(musicData?.url));
     }, [musicData?.url, dispatch]);
 
-    const { renderAudio, controls, play, pause } = useCreateAudio({ url: musicData?.url });
+    const { renderAudio, controls } = useCreateAudio({ url: musicData?.url });
     useEffect(() => {
         if(controls) {
             dispatch(setAudioControls(controls));

@@ -34,6 +34,7 @@ const AudioPlayer = ({
                 verticalAlign: "middle",
                 overflow: "hidden",
                 whiteSpace: "nowrap",
+                marginLeft: "10px"
             }}>{ audioTitle }</Title>
             <SliderWithClock 
                 controls={controls} 
