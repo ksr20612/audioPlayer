@@ -7,7 +7,7 @@ const API = (baseUrl?: string): AxiosInstance => {
         headers: {
             "Content-Type": "application/json",
         },
-        timeout: TIMEOUT, // error.code === 'ECONNABORTED'
+        timeout: TIMEOUT,
     });
     instance.interceptors.request.use((config) => {
         if(config.method === 'get') {
@@ -23,7 +23,7 @@ const API = (baseUrl?: string): AxiosInstance => {
         const { code, response } = error;
         if(code === "ECONNABORTED" || response?.status === 408) {
             // timeout
-            alert("서버와 연결할 수 없습니다!");
+            alert("서버와 연결할 수 없습니다.");
             return Promise.reject(error);
         }
         return Promise.reject(error);

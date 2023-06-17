@@ -25,10 +25,8 @@ const MusicListContainer = ({
     const handleClick = useCallback((musicId: Music["id"], musicTitle: Music["title"]) => {
         if(audioIdSelected === musicId) {
             if(isPlaying) {
-                // pause
                 pause && pause();
             }else {
-                // start
                 play && play(audioIdSelected);
             }
         }else {

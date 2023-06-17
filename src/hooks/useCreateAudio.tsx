@@ -51,13 +51,10 @@ const useCreateAudio = ({ url, autoPlay = true, callback }: useCreateAudioProps)
                     <audio 
                         ref={audioRef}
                         src={url}
-                        // loop={loop}
                         onPlaying={() => setIsPlaying(true)}
                         onPause={() => setIsPlaying(false)}
                         onTimeUpdate={() => setCurrentTime(audioRef.current?.currentTime as number)}
                         onDurationChange={() => setDuration(audioRef.current?.duration as number)}
-                        // onRateChange={() => setPlaybackRate(audioRef.current?.playbackRate as number)}
-                        // onVolumeChange={() => setVolume(audioRef.current?.volume as number)}
                         onEnded={callback}
                         autoPlay={autoPlay}
                     />

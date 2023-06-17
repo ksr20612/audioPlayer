@@ -5,6 +5,5 @@ export interface AudioControls {
     stop: () => void;
     currentTime: number;
     duration: number;
-    // calculateTime: (time: number, total: number) => string;
     onRangeChanged: (value: number | string) => void;
 }
