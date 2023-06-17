@@ -7,6 +7,7 @@ import Boundary from 'components/Boundary';
 import { getTheme } from 'styles/theme';
 import useSetMediaTheme from 'hooks/useSetMediaTheme';
 import Spinner from 'components/Spinner';
+import "./fonts.css";
 
 const App = (): ReactElement => {
 

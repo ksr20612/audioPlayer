@@ -13,14 +13,12 @@ const Slider = ({
     currentTime,
     handleChange,
 }: SliderProps): ReactElement => {
-    console.log({ widthPlayed: currentTime / duration * 100 });
     return (
         <AudioSlider 
             key="audioSlider"
             min={0}
             max={duration}
             value={currentTime}
-            // widthPlayed={currentTime / duration * 100}
             onChange={(e) => handleChange(e.target.value)}
             step="0.001"
         />
@@ -28,7 +26,8 @@ const Slider = ({
 };
 
 const AudioSlider = styled.input.attrs({
-    type: "range"
+    type: "range",
+    tabIndex: -1,
 })`
     position: relative;
     width: 100%;

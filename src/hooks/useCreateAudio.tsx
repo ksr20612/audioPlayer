@@ -10,32 +10,15 @@ const useCreateAudio = ({ url, autoPlay = true, callback }: useCreateAudioProps)
 
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const [isPlaying, setIsPlaying] = useState<boolean>(false);
-    // const [loop, setLoop] = useState<boolean>(false);
     const [currentTime, setCurrentTime] = useState<number>(0);
     const [duration, setDuration] = useState<number>(0);
-    // const [playbackRate, setPlaybackRate] = useState<number>(1);
-    // const [volume, setVolume] = useState<number>(1);
-    
-    // const audioIdSelected = useAppSelector((state) => state.audio.audioIdSelected);
     const audioIdPlaying = useRef<string | null>(null);
-
-    // useEffect(() => {
-    //     console.log({ audioIdPlaying, audioIdSelected });
-    //     if (audioIdPlaying.current) {
-    //         if (audioIdPlaying.current !== audioIdSelected) {
-    //             stop();
-    //             audioIdPlaying.current = audioIdSelected;
-    //             play();
-    //         }
-    //     }
-    // }, [audioIdSelected]);
 
     const play = useCallback((audioIdSelected: string) => {
         if (audioRef.current) {
             audioRef.current.play();
             audioIdPlaying.current = audioIdSelected;
             setIsPlaying(true);
-            console.log("Audio Play");
         }
     }, []);
     
@@ -43,7 +26,6 @@ const useCreateAudio = ({ url, autoPlay = true, callback }: useCreateAudioProps)
         if (audioRef.current) {
             audioRef.current.pause();
             setIsPlaying(false);
-            console.log("Audio Pause");
         }
     }, []);
 
@@ -53,38 +35,15 @@ const useCreateAudio = ({ url, autoPlay = true, callback }: useCreateAudioProps)
             audioRef.current.currentTime = 0;
             audioIdPlaying.current = null;
             setIsPlaying(true);
-            console.log("Audio Stop");
         }
     }, []);
 
-    // const calculateTime = useCallback((time: number, total: number) => {
-    //     let int = Math.floor(time);
-    //     if (total) {
-    //         int = Math.floor(total) - Math.floor(time);
-    //     }
-    //     const minute = (Math.floor(int / 60) + '').padStart(2, '0');
-    //     const second = (int % 60 + '').padStart(2, '0');
-    //     return `${minute}:${second}`;
-    // }, []);
-    
     const onRangeChanged = useCallback((value: number | string) => {
         if (audioRef.current) {
             audioRef.current.currentTime = +value;
         }
     }, []);
-    
-    // const onPlaybackRateChanged = useCallback((value: number | string) => {
-    //     if (audioRef.current) {
-    //         audioRef.current.playbackRate = +value;
-    //     }
-    // }, []);
 
-    // const onVolumeChanged = useCallback((value: number | string) => {
-    //     if (audioRef.current) {
-    //         audioRef.current.volume = +value;
-    //     }
-    // }, []);
-    
     const renderAudio = () => {
         return (
             <>

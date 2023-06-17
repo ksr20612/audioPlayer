@@ -1,10 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 import { Music, MusicsURL } from "api/musics";
 import { AudioControls } from "types/AudioControls";
-import { AudioState } from "types/AudioState"
 
 interface InitialState {
-    // audioState: AudioState,
     audioIdSelected: Music["id"],
     audioTitleSelected: Music["title"],
     audioUrlSelected: MusicsURL["url"],
@@ -12,7 +10,6 @@ interface InitialState {
 }
 
 const initialState: InitialState = {
-    // audioState: AudioState.DEFAULT,
     audioIdSelected: "",
     audioTitleSelected: "",
     audioUrlSelected: "",
@@ -23,9 +20,6 @@ export const AudioSlice = createSlice({
     name: "audio",
     initialState,
     reducers: {
-        // setAudioState: (state, { payload }: PayloadAction<AudioState>) => {
-        //     state.audioState = payload;
-        // },
         setAudioIdSelected: (state, { payload }: PayloadAction<Music["id"]>) => {
             state.audioIdSelected = payload;
         },

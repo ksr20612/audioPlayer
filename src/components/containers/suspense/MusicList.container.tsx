@@ -27,7 +27,9 @@ const Wrapper = styled.div`
     align-items: center;
     flex-direction: column;
     gap: 10px;
-    border: 1px solid ${({theme}) => theme.color.main_text};
+    background-color: white;
+    box-shadow: 8px 16px 16px hsl(0deg 0% 0% / 0.25);
+    border-radius: 8px;
 `
 
 export default MusicListSuspenseContainer;

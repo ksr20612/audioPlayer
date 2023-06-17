@@ -1,7 +1,6 @@
 import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import PlayerPage from "components/pages/PlayerPage";
-import TestPage from "components/pages/TestPage";
 const NotFoundPage = lazy(() => import('./components/pages/NotFoundPage'));
 
 const Router = () => {

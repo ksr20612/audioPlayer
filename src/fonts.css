@@ -1,0 +1,12 @@
+body {
+    font-family: "Square";
+}
+
+@font-face {
+    font-family: "Square";
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/NanumSquareNeo.woff2') format('woff2'),
+        url('./assets/fonts/NanumSquareNeo.woff') format('woff'),
+        url('./assets/fonts/NanumSquareNeo.ttf') format('truetype');
+}

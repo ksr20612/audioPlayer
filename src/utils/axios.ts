@@ -18,7 +18,6 @@ const API = (baseUrl?: string): AxiosInstance => {
         return Promise.reject(error);
     });
     instance.interceptors.response.use((response) => {
-        console.log({ response });
         return response;
     }, (error: AxiosError) => {
         const { code, response } = error;

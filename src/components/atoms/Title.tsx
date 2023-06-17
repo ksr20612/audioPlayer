@@ -17,7 +17,9 @@ const Title = ({
     );
 };
 
-const Wrapper = styled.h1`
+const Wrapper = styled.h1.attrs({
+    tabIndex: 0,
+})`
 
 `
 
