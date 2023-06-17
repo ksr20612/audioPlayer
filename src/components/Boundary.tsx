@@ -4,6 +4,7 @@ import { ErrorBoundary, FallbackProps, useErrorBoundary } from 'react-error-boun
 import Spinner from './Spinner';
 import styled from 'styled-components';
 import Button from './atoms/Button';
+import { QueryErrorResetBoundary } from '@tanstack/react-query';
 
 interface BoundaryProps {
     fallback?: ReactNode;
@@ -29,13 +30,15 @@ const Boundary = ({
     }, []);
 
     return (
-        <ErrorBoundary 
-            fallbackRender={errorFallback}
-        >
-            <Suspense fallback={fallback}>
-                {children}
-            </Suspense>
-        </ErrorBoundary>
+        <QueryErrorResetBoundary>
+            <ErrorBoundary 
+                fallbackRender={errorFallback}
+            >
+                <Suspense fallback={fallback}>
+                    {children}
+                </Suspense>
+            </ErrorBoundary>
+        </QueryErrorResetBoundary>
     );
 }
 

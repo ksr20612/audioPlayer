@@ -24,7 +24,7 @@ export interface MusicsURL {
 
 // GET /musics
 export const getMusics = () => {
-    return API("localhost:8081").get<MusicList>(`/musics`);
+    return API().get<MusicList>(`/musics`);
 }
 
 // GET /musics/:musicId
