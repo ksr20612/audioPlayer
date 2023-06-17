@@ -16,6 +16,7 @@ export const useMusicsQuery = (
             items: sortItemsByDate(data.data.items, { order: "DESC" })
         }),
         suspense: true,
+        staleTime: 5 * 60 * 1000,
         ...options,
     })
 } 
@@ -31,6 +32,7 @@ export const useMusicsByMusicIdQuery = (
         select: data => data.data,
         suspense: true,
         enabled: !!param.musicId,
+        staleTime: 5 * 60 * 1000,
         ...options
     })
 }

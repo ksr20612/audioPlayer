@@ -18,7 +18,6 @@ const MusicListContainer = ({
     const { data: musicData } = useMusicsQuery();
 
     const audioIdSelected = useAppSelector(state => state.audio.audioIdSelected);
-    // const audioState = useAppSelector(state => state.audio.audioState);
     const play = useAppSelector(state => state.audio.audioControls?.play);
     const pause = useAppSelector(state => state.audio.audioControls?.pause);
     const isPlaying = useAppSelector(state => state.audio.audioControls?.isPlaying);
@@ -27,18 +26,13 @@ const MusicListContainer = ({
         if(audioIdSelected === musicId) {
             if(isPlaying) {
                 // pause
-                console.log("should be paused!");
                 pause && pause();
             }else {
                 // start
-                console.log("should be start!");
                 play && play(audioIdSelected);
             }
         }else {
-            console.log("stop!");
             stop && stop();
-            // start
-            console.log("new music clicked: should be start!");
             dispatch(setAudioIdSelected(musicId));
             dispatch(setAudioTitleSelected(musicTitle));
             play && play(audioIdSelected);
@@ -49,7 +43,8 @@ const MusicListContainer = ({
         <MusicList 
             musicList={musicData?.items ?? []}
             handleClick={handleClick} 
-            audioIdSelected={audioIdSelected}                
+            audioIdSelected={audioIdSelected}
+            isPlaying={!!isPlaying}                
         />
     );
 };

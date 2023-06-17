@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 import client from 'api/QueryClient';
 
 // 수정 및 삭제 금지
-// createMockServer();
+createMockServer();
 
 ReactDOM.render(
   // <React.StrictMode>

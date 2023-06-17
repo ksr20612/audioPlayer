@@ -6,25 +6,30 @@ import styled, { css } from 'styled-components';
 import { FixedSizeList } from 'react-window';
 import useGetElementSize from 'hooks/useGetElementSize';
 import { useAppSelector } from 'stores/Store';
+import React from 'react';
+import useGetWindowSize from 'hooks/useGetWindowSize';
 
 interface MusicListProps {
     musicList: MusicType[];
     handleClick: (audioId: MusicType["id"], audioTitle: MusicType["title"]) => void; 
     audioIdSelected: MusicType["id"];
+    isPlaying: boolean;
 };
 
 const MusicList = ({
     musicList,
     handleClick,
     audioIdSelected,
+    isPlaying
 }: MusicListProps): ReactElement => {
 
-    const { targetRef, size } = useGetElementSize<HTMLDivElement>();
-    const controls = useAppSelector(state => state.audio.audioControls);
+    const { size: triggerSizeChange } = useGetWindowSize();
+    const { targetRef, size } = useGetElementSize<HTMLDivElement>({ trigger: triggerSizeChange });
 
     return (
         <Wrapper ref={targetRef}>
             <FixedSizeList
+                key="musicList"
                 height={size.height}
                 width={size.width}
                 itemSize={100}
@@ -32,9 +37,10 @@ const MusicList = ({
             >
                 {({ index, style }) => 
                     <Row 
+                        key={index}
                         index={index} 
                         data={musicList[index]} 
-                        isPlaying={controls?.isPlaying}
+                        isPlaying={isPlaying}
                         style={style} 
                         audioIdSelected={audioIdSelected} 
                         handleClick={handleClick}
@@ -44,7 +50,7 @@ const MusicList = ({
     );
 };
 
-const Row = ({
+const Row = React.memo(({
     data,
     isPlaying,
     audioIdSelected,
@@ -67,6 +73,7 @@ const Row = ({
             {
                 data && 
                 <Music 
+                    key={data.id}
                     id={data.id} 
                     title={data.title} 
                     moods={data.moods} 
@@ -79,7 +86,7 @@ const Row = ({
             }
         </>
     )
-};
+});
 
 const Wrapper = styled.div`
     width: 100%;
