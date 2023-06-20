@@ -1,8 +1,8 @@
 import PlayButton from 'components/atoms/PlayButton';
 import Title from 'components/atoms/Title';
 import SliderWithClock from 'components/molecules/SliderWithClock';
-import { useState, useEffect, useRef, useCallback, useMemo, ReactElement, ReactNode } from 'react';
-import styled, { css } from 'styled-components';
+import { useCallback, ReactElement, ReactNode } from 'react';
+import styled from 'styled-components';
 import { AudioControls } from 'types/AudioControls';
 
 interface AudioPlayerProps {

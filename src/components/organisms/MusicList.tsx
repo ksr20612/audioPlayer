@@ -1,6 +1,6 @@
 import { Music as MusicType } from 'types/Music';
-import { useState, useEffect, useRef, useCallback, useMemo, ReactElement, CSSProperties } from 'react';
-import styled, { css } from 'styled-components';
+import { ReactElement } from 'react';
+import styled from 'styled-components';
 import { FixedSizeList } from 'react-window';
 import useGetElementSize from 'hooks/useGetElementSize';
 import useGetWindowSize from 'hooks/useGetWindowSize';

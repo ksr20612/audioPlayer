@@ -1,7 +1,6 @@
 import Clock from 'components/atoms/Clock';
 import Slider from 'components/atoms/Slider';
-import React, { ReactElement, useState, useEffect, useCallback, useRef } from 'react';
-import styled, { css } from 'styled-components';
+import { ReactElement } from 'react';
 import { AudioControls } from 'types/AudioControls';
 import { parseTime } from 'utils/parseTime';
 

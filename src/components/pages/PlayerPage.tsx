@@ -1,11 +1,7 @@
-import React, { ReactElement, useState, useEffect, useCallback, useRef } from 'react';
+import { ReactElement } from 'react';
 import Screen from 'components/templates/Screen';
 
-interface PlayerPageProps {
-  
-}
-
-const PlayerPage = ({}: PlayerPageProps): ReactElement => {
+const PlayerPage = (): ReactElement => {
 
     return (
         <Screen />

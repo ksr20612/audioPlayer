@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef, useCallback, useMemo, ReactElement, CSSProperties } from 'react';
-import styled, { css } from 'styled-components';
+import { ReactElement, CSSProperties } from 'react';
+import styled from 'styled-components';
 import { EventFunc } from 'types/Event';
 import playButtonImage from 'assets/images/play-svgrepo-com.png';
 import stopButtonImage from 'assets/images/pause-svgrepo-com.png';

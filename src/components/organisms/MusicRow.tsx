@@ -1,5 +1,5 @@
 import React, { CSSProperties } from "react";
-import { Music as MusicType, MusicList } from "types/Music";
+import { Music as MusicType } from "types/Music";
 import { useMusicsByMusicIdQuery } from "api/musics/queries";
 import { MusicListProps } from "./MusicList";
 import Music from "components/molecules/Music";

@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface useElementSize {
     trigger: any;

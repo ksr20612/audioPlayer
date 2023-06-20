@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { ThemeState } from 'types/ThemeState';
 
 const useSetMediaTheme = () => {

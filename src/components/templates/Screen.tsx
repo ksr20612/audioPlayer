@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef, useCallback, useMemo, ReactElement } from 'react';
-import styled, { css } from 'styled-components';
+import { ReactElement } from 'react';
+import styled from 'styled-components';
 import MusicListContainer from 'components/containers/suspense/MusicList.container';
 import AudioPlayerContainer from 'components/containers/suspense/AudioPlayer.container';
 

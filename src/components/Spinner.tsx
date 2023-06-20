@@ -1,5 +1,5 @@
 import styled, { useTheme } from "styled-components";
-import React, { ReactElement, useState, useEffect, CSSProperties } from "react";
+import { ReactElement } from "react";
 import { ReactComponent as LoadingSvg } from "assets/svgs/loading.svg";
 import { Size } from "types/Size";
 import { Color } from "types/Color";

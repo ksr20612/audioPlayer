@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef, useCallback, useMemo, ReactElement } from 'react';
-import styled, { css } from 'styled-components';
+import { ReactElement } from 'react';
+import styled from 'styled-components';
 import React from 'react';
 
 interface SliderProps {

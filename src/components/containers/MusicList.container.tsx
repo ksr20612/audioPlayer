@@ -1,7 +1,7 @@
 import { useMusicsQuery } from 'api/musics/queries';
 import { Music } from 'types/Music';
 import MusicList from 'components/organisms/MusicList';
-import { useState, useEffect, useRef, useCallback, useMemo, ReactElement } from 'react';
+import { useCallback, ReactElement } from 'react';
 import { useDispatch } from 'react-redux';
 import { useAppSelector } from 'stores/Store';
 import { setAudioIdSelected, setAudioTitleSelected } from 'stores/slices/audio.slice';

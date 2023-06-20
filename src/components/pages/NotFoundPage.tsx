@@ -1,10 +1,6 @@
-import React, { ReactElement, useState, useEffect, useCallback, useRef } from 'react';
+import { ReactElement } from 'react';
 
-interface NotFoundPageProps {
-  
-}
-
-const NotFoundPage = ({}: NotFoundPageProps): ReactElement => {
+const NotFoundPage = (): ReactElement => {
 
     return (
         <>

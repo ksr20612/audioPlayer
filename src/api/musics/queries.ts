@@ -1,8 +1,9 @@
 import { UseQueryResult, useQuery } from "@tanstack/react-query"
 import { AxiosError, AxiosResponse, CancelTokenSource } from "axios"
-import { GetMusicURLRequest, MusicKeys, MusicList, MusicsURL, getMusicURL, getMusics } from "."
+import { MusicKeys, getMusicURL, getMusics } from "."
 import { QueryOptions } from "types/QueryOptions";
 import { sortItemsByDate } from "utils/sortItemsByDate";
+import { GetMusicURLRequest, MusicList, MusicsURL } from "types/Music";
 
 // GET /musics
 export const useMusicsQuery = (

@@ -2,7 +2,7 @@ import Genre from 'components/atoms/Genre';
 import Mood from 'components/atoms/Mood';
 import Title from 'components/atoms/Title';
 import Date from 'components/atoms/Date';
-import { useState, useEffect, useRef, useCallback, useMemo, ReactElement, ReactNode, CSSProperties } from 'react';
+import { ReactElement, CSSProperties } from 'react';
 import styled, { css } from 'styled-components';
 import { EventFunc } from 'types/Event';
 import PlayButton from 'components/atoms/PlayButton';

@@ -1,7 +1,7 @@
 import { useMusicsByMusicIdQuery } from 'api/musics/queries';
 import AudioPlayer from 'components/organisms/AudioPlayer';
 import useCreateAudio from 'hooks/useCreateAudio';
-import { useState, useEffect, useRef, useCallback, useMemo, ReactElement } from 'react';
+import { useEffect, ReactElement } from 'react';
 import { useAppDispatch, useAppSelector } from 'stores/Store';
 import { setAudioControls, setAudioUrlSelected } from 'stores/slices/audio.slice';
 

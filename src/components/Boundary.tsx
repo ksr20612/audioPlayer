@@ -1,6 +1,6 @@
-import React, { ReactElement, useState, useEffect, useCallback, useRef, ReactNode, Suspense } from 'react';
+import { ReactElement, useCallback, ReactNode, Suspense } from 'react';
 import { PropsWithChildren } from 'types/PropsWithChildren';
-import { ErrorBoundary, FallbackProps, useErrorBoundary } from 'react-error-boundary';
+import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 import Spinner from './Spinner';
 import styled from 'styled-components';
 import Button from './atoms/Button';
@@ -19,7 +19,7 @@ const Boundary = ({
     )
 }: PropsWithChildren<BoundaryProps>): ReactElement => {
 
-    const errorFallback = useCallback(({ error, resetErrorBoundary }: FallbackProps) => {
+    const errorFallback = useCallback(({ resetErrorBoundary }: FallbackProps) => {
         return (
             <Wrapper>
                 <strong>Sorry, something went wrong!</strong>
