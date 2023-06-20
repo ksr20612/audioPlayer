@@ -1,3 +1,5 @@
+<img width="1429" alt="image" src="https://github.com/ksr20612/audioPlayer/assets/48278678/3dc05ccd-bf48-4d1c-934d-c77e7224f62b">
+
 # 구성
 
 ## `전역 상태 관리(클라이언트측 데이터 관리)` : react-redux(8.1.0), reduxjs/toolkit(1.9.5)
