@@ -14,11 +14,16 @@ const useCreateAudio = ({ url, autoPlay = true, callback }: useCreateAudioProps)
     const [duration, setDuration] = useState<number>(0);
     const audioIdPlaying = useRef<string | null>(null);
 
-    const play = useCallback((audioIdSelected: string) => {
+    const play = useCallback(async (audioIdSelected: string) => {
         if (audioRef.current) {
-            audioRef.current.play();
-            audioIdPlaying.current = audioIdSelected;
-            setIsPlaying(true);
+            const playPromise = audioRef.current.play();
+            if(playPromise !== undefined) {
+                playPromise.then(_ => {
+                    audioIdPlaying.current = audioIdSelected;
+                    console.log(audioIdPlaying.current);
+                    setIsPlaying(true);
+                }).catch(err => {});
+            }
         }
     }, []);
     
@@ -74,8 +79,6 @@ const useCreateAudio = ({ url, autoPlay = true, callback }: useCreateAudioProps)
             duration,
             onRangeChanged,
         },
-        play,
-        pause,
     };
 };
 

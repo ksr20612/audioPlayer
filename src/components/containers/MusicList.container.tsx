@@ -1,5 +1,5 @@
 import { useMusicsQuery } from 'api/musics/queries';
-import { Music } from 'api/musics';
+import { Music } from 'types/Music';
 import MusicList from 'components/organisms/MusicList';
 import { useState, useEffect, useRef, useCallback, useMemo, ReactElement } from 'react';
 import { useDispatch } from 'react-redux';
@@ -23,6 +23,7 @@ const MusicListContainer = ({
     const isPlaying = useAppSelector(state => state.audio.audioControls?.isPlaying);
     const stop = useAppSelector(state => state.audio.audioControls?.stop);
     const handleClick = useCallback((musicId: Music["id"], musicTitle: Music["title"]) => {
+        console.log({ audioIdSelected, musicId, isPlaying });
         if(audioIdSelected === musicId) {
             if(isPlaying) {
                 pause && pause();
