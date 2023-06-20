@@ -1,4 +1,4 @@
-import { Music } from "api/musics";
+import { Music } from "types/Music";
 import { sortItemsByDate } from "./sortItemsByDate";
 import mockData from "mockServer/mockData";
 

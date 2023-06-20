@@ -1,4 +1,4 @@
-import { Music } from "api/musics"
+import { Music } from "types/Music";
 
 export const sortItemsByDate = (musics: Music[], config: SortConfig) => {
     return musics.sort((prev, cur) => {

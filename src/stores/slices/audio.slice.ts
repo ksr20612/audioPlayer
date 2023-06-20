@@ -1,5 +1,5 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit"
-import { Music, MusicsURL } from "api/musics";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { Music, MusicsURL } from "types/Music";
 import { AudioControls } from "types/AudioControls";
 
 interface InitialState {
